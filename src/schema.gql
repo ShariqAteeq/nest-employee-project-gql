@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Employee {
+  id: String!
+  fullName: String!
+  designation: String!
+  city: String
+}
+
+type Project {
+  id: String!
+  name: String!
+  code: Float!
+}
+
+type Query {
+  getAllEmployees: [Employee!]!
+  getAllProjects: [Project!]!
+}
+
+type Mutation {
+  createEmployee(employee: CreateEmpInput!): Employee!
+  createProject(project: CreateProInput!): Project!
+}
+
+input CreateEmpInput {
+  fullName: String!
+  designation: String!
+  city: String
+}
+
+input CreateProInput {
+  name: String!
+  code: Float!
+}
