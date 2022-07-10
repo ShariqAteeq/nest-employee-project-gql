@@ -7,17 +7,21 @@ type Employee {
   fullName: String!
   designation: String!
   city: String
+  project: Project
+  projectId: Float
 }
 
 type Project {
-  id: String!
+  id: Float!
   name: String!
   code: Float!
+  employees: [Employee!]
 }
 
 type Query {
   getAllEmployees: [Employee!]!
   getAllProjects: [Project!]!
+  getProject(projectId: Float!): Project!
 }
 
 type Mutation {
@@ -29,6 +33,7 @@ input CreateEmpInput {
   fullName: String!
   designation: String!
   city: String
+  projectId: Float
 }
 
 input CreateProInput {

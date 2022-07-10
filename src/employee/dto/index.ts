@@ -8,4 +8,6 @@ export class CreateEmpInput {
   designation: String;
   @Field({ nullable: true })
   city: String;
+  @Field({ nullable: true })
+  projectId: number;
 }

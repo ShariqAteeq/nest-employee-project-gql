@@ -12,6 +12,11 @@ export class ProjectResolver {
     return this.proService.findAll();
   }
 
+  @Query(() => Project)
+  getProject(@Args('projectId') id: number) {
+    return this.proService.findOne(id);
+  }
+
   @Mutation(() => Project)
   createProject(@Args('project') emp: CreateProInput) {
     return this.proService.createPro(emp);

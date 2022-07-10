@@ -11,7 +11,11 @@ export class ProjectService {
   ) {}
 
   async findAll(): Promise<Project[]> {
-    return this.proRepo.find();
+    return this.proRepo.find({ relations: ['employees'] });
+  }
+
+  async findOne(id: number): Promise<Project> {
+    return this.proRepo.findOne({ where: { id }, relations: ['employees'] });
   }
 
   async createPro(payload: CreateProInput): Promise<Project> {
